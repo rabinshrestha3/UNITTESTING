@@ -1,4 +1,4 @@
-name: Python package
+name: Unit Tests
 
 on:
   pull_request:
@@ -13,10 +13,10 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    - name: Install dependencies
+    - name: Install Pytest and Pyspark dependencies
       run: |
         python -m pip install --upgrade pip
         pip install pytest pyspark
-    - name: Run tests
+    - name: Run Unit Tests
       run: |
         pytest
